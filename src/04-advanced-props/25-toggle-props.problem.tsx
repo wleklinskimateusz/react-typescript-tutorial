@@ -11,11 +11,17 @@
  * Hint - you'll need a discriminated union!
  */
 
-type EmbeddedPlaygroundProps = {
-  useStackblitz?: boolean;
-  stackblitzId?: string;
-  codeSandboxId?: string;
+type StackblitzProps = {
+  useStackblitz: true;
+  stackblitzId: string;
 };
+
+type CodeSandboxProps = {
+  useStackblitz?: false;
+  codeSandboxId: string;
+};
+
+type EmbeddedPlaygroundProps = StackblitzProps | CodeSandboxProps;
 
 const EmbeddedPlayground = (props: EmbeddedPlaygroundProps) => {
   if (props.useStackblitz) {

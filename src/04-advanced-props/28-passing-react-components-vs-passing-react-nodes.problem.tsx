@@ -7,10 +7,10 @@ import { Equal, Expect } from "../helpers/type-utils";
  * 2. Once you understand why the errors are happening, see if you can
  * find a way to fix them by changing the definition of TableProps.
  */
-interface TableProps {
-  renderRow: React.ReactNode;
-}
 
+interface TableProps {
+  renderRow: (value: number, index: number, array: number[]) => React.ReactNode;
+}
 const Table = (props: TableProps) => {
   return <div>{[0, 1, 3].map(props.renderRow)}</div>;
 };

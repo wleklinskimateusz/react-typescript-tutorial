@@ -15,10 +15,15 @@ type InputProps = (
       value: string;
       onChange: ChangeEventHandler;
     }
-  | {}
+  | {
+      value?: undefined;
+      onChange?: undefined;
+    }
 ) & {
   label: string;
 };
+
+const a: InputProps = { label: "abc" };
 
 export const Input = ({ label, ...props }: InputProps) => {
   return (
