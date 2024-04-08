@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { ButtonHTMLAttributes } from "react";
 
-interface ButtonProps {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className: string;
   children: React.ReactNode;
 }
